@@ -38,3 +38,7 @@ C:\Users\ddolg\Desktop\SRWR\SRWR_prob\OCCFRecSys\obj\Release\OCCFRecSys.csproj.C
 C:\Users\ddolg\Desktop\SRWR\SRWR_prob\OCCFRecSys\obj\Release\OCCFRecSys.csproj.CopyComplete
 C:\Users\ddolg\Desktop\SRWR\SRWR_prob\OCCFRecSys\obj\Release\OCCFRecSys.exe
 C:\Users\ddolg\Desktop\SRWR\SRWR_prob\OCCFRecSys\obj\Release\OCCFRecSys.pdb
+C:\Users\kbcba\2020graduateproject\SRWR_prob\OCCFRecSys\obj\Release\OCCFRecSys.csprojAssemblyReference.cache
+C:\Users\kbcba\2020graduateproject\SRWR_prob\OCCFRecSys\obj\Release\OCCFRecSys.csproj.CoreCompileInputs.cache
+C:\Users\kbcba\2020graduateproject\SRWR_prob\OCCFRecSys\obj\Release\OCCFRecSys.exe
+C:\Users\kbcba\2020graduateproject\SRWR_prob\OCCFRecSys\obj\Release\OCCFRecSys.pdb

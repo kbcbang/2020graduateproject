@@ -26,8 +26,8 @@ namespace OCCFRecSys
             this.graph = TargetGraph;
             this.T = T;
 
-            score = new double[graph.Size];
-            restart = new double[graph.Size];
+            score = new double[graph.user_size];
+            restart = new double[graph.user_size];
             for (int i = 0; i < score.Length; i++)
             {
                 if (InitialNode == i)

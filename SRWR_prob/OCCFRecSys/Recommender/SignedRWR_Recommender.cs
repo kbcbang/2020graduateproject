@@ -41,17 +41,6 @@ namespace OCCFRecSys
             Init_SoRec(num_recommend, test, balance, social, social_unint, training, training_unint);
         }
 
-        public SignedRWR_Recommender(string candidate_item, int num_recommend, int fold, StreamReader training, StreamReader test, double beta, double gamma, int num_user)
-        {
-            this.candidate_item = candidate_item;
-            this.fold = fold;
-            this.beta = beta;
-            this.gamma = gamma;
-            this.num_user = num_user;
-
-            Init(num_recommend, training, test);
-        }
-
         // SoRec
         public void Init_SoRec(int num_recommend, StreamReader test, int[] balance, StreamReader social, StreamReader social_unint, StreamReader training, 
             StreamReader training_unint)
@@ -93,24 +82,7 @@ namespace OCCFRecSys
         /// <param name="num_recommend"></param>
         /// <param name="training"></param>
         /// <param name="test"></param>
-        public override void Init(int num_recommend, StreamReader training, StreamReader test)
-        {
-            // RWR variables
-            e = 0.0d;
-            damping_factor = 0.85d;
-            this.num_recommend = num_recommend;
-
-            // test set 읽기
-            ReadTestSet(test, candidate_item);
-            test.Close();
-            Console.WriteLine("Read test set: Complete");
-
-            // training set 읽기
-
-            ReadTrainingSet(training);
-            training.Close();
-            Console.WriteLine("Read training set: Complete");
-        }
+       
 
         public void ReadTrainingSet_SoRec(StreamReader sr)
         {
@@ -121,23 +93,6 @@ namespace OCCFRecSys
                 // int item_id = int.Parse(line[1].ToString()) + Program.num_user;
                 int item_id = int.Parse(line[1].ToString());
                 int rating = (int)double.Parse(line[2].ToString());
-                if (rating == 0)
-                    rating = -1;
-
-                links.Add(new WeightedLink(user_id, item_id, rating)); // weight 추가시: double.Parse(line[2])
-            }
-        }
-
-        public override void ReadTrainingSet(StreamReader sr)
-        {
-            links = new List<WeightedLink>();
-
-            while (!sr.EndOfStream)
-            {
-                line = sr.ReadLine().Split(new char[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
-                int user_id = int.Parse(line[0].ToString());
-                int item_id = int.Parse(line[1].ToString());
-                int rating = int.Parse(line[2].ToString());
                 if (rating == 0)
                     rating = -1;
 
